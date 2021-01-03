@@ -1,6 +1,9 @@
 public class MyLinkedList {
-    public static void main(String args[])
+    public INode head;
+    public INode tail;
+    public MyLinkedList()
     {
-        System.out.println("Linked List");
+        this.head=null;
+        this.tail=null;
     }
 }
