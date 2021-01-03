@@ -1,4 +1,4 @@
-public class MyLinkedList {
+public class MyLinkedList<K> {
     public INode<K> head;
     public INode<K> tail;
     public MyLinkedList()
@@ -6,7 +6,7 @@ public class MyLinkedList {
         this.head=head;
         this.tail=tail;
     }
-    public void add(INode<K> myNode)
+    public void add(INode myNode)
     {
         if (this.tail==null)
         {
@@ -51,5 +51,11 @@ public class MyLinkedList {
             this.tail.setNext(myNode);
             this.tail=myNode;
         }
+    }
+    public void insert(INode myNode,INode newNode)
+    {
+        INode tempNode=myNode.getNext();
+        myNode.setNext(tempNode);
+        newNode.setNext(tempNode);
     }
 }
