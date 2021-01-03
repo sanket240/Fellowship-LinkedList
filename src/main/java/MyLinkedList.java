@@ -94,4 +94,21 @@ public class MyLinkedList<K> {
         newNode.setNext(tempNode.getNext());
         tempNode.setNext(newNode);
     }
+    public void deleteAfter(INode searchNode)
+    {
+        INode<K> tempNode;
+        tempNode=search((K) searchNode);
+        tempNode.setNext(tempNode.getNext().getNext());
+    }
+    public int size()
+    {
+        INode<K> tempNode=head;
+        int cnt=0;
+        while (tempNode!=null&&tempNode.getNext()!=null)
+        {
+            cnt++;
+            tempNode=tempNode.getNext();
+        }
+        return cnt;
+    }
 }
