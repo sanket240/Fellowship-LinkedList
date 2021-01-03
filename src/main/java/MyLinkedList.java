@@ -52,6 +52,11 @@ public class MyLinkedList<K> {
             this.tail=myNode;
         }
     }
+    public INode<K> pop(){
+        INode<K> tempNode =this.head;
+        this.head= head.getNext();
+        return tempNode;
+    }
     public void insert(INode myNode,INode newNode)
     {
         INode tempNode=myNode.getNext();
