@@ -87,4 +87,11 @@ public class MyLinkedList<K> {
         }
         return null;
     }
+    public void insertAfter(INode searchNode,INode newNode)
+    {
+        INode tempNode;
+        tempNode=search((K) searchNode);
+        newNode.setNext(tempNode.getNext());
+        tempNode.setNext(newNode);
+    }
 }
